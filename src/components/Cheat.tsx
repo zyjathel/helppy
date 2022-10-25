@@ -22,7 +22,7 @@ export const Cheat: FunctionComponent<{
       }}
     >
       <input
-        // type="number"
+        type="number"
         placeholder="Type a number here"
         className="py-2 px-2 rounded-sm text-gray-800 border-b-2  font-mono border-gray-800 focus:border-none"
         value={input}
