@@ -22,3 +22,10 @@ I tried to show example of most common hooks: `useState/useEffect`. I admit a wa
 
 And improvements can also be done on how styling (tailwindcss classes) are used. It is better to have some base components that share some base styles. Currently I am repeating the classnames for most cases.
 
+
+## UX
+
+There are a lot that can be improvement besides than making it look better in general:
+- adding some grayscale to disable buttons
+- add some shortcuts
+- more stats
