@@ -6,7 +6,7 @@ export const Board: FunctionComponent<{ data: (number | null)[]; heading: string
   heading,
   marked,
 }) => {
-  // an option to render heading can be ended
+  // an option to render heading can be added
   const columnsCount = heading.length;
   const rowsCount = data.length / columnsCount;
 
