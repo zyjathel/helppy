@@ -1,16 +1,15 @@
-import React, { FunctionComponent, useCallback, useEffect, useRef } from "react";
-import "./App.css";
-import { AuthenticatedAppState, UnauthenticatedState, useAppStore, useGameStore } from "./store/store";
+import { FunctionComponent, useEffect } from "react";
 import shallow from "zustand/shallow";
-import { UsernameInput } from "./components/UsernameInput";
+import "./App.css";
 import { Board } from "./components/Board";
-import { History } from "./components/History";
 import { Cheat } from "./components/Cheat";
+import { History } from "./components/History";
+import { UsernameInput } from "./components/UsernameInput";
+import { AuthenticatedAppState, UnauthenticatedState, useAppStore, useGameStore } from "./store/store";
 
 const Game: FunctionComponent<{}> = () => {
   const username = useAppStore((state) => (state as AuthenticatedAppState).username);
 
-  // const restartButtonRef = useRef<HTMLButtonElement>(null);
 
   const board = useGameStore((state) => state.board);
 

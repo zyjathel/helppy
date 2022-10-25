@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 
 export const History: FunctionComponent<{ data: number[] }> = ({ data }) => {
   return (
