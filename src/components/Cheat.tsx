@@ -16,6 +16,9 @@ export const Cheat: FunctionComponent<{
     <div
       className="flex items-center h-full w-full text-sm"
       onKeyDown={(e) => {
+        if (disabled) {
+          return;
+        }
         if (e.key === "Enter") {
           onConfirm(parseInt(input));
         }
