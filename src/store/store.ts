@@ -39,7 +39,7 @@ export const useGameStore = create<Game>()(
       for (let i = 0; i < seed.length; i++) {
         const candidates = Array.from(Array(range).keys()).map((x) => x + 1 + range * i);
         const shuffled = shuffle(candidates);
-        board = [...board, ...shuffled.slice(0, 5)];
+        board = [...board, ...shuffled.slice(0, get().seed.length)];
       }
       board[Math.floor(board.length / 2)] = null;
       set((state) => {

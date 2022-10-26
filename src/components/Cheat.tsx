@@ -31,7 +31,7 @@ export const Cheat: FunctionComponent<{
         }}
       ></input>
       <button
-        className="bg-yellow-200 px-4 py-2 rounded-sm text-gray-800 disabled:cursor-not-allowed ml-2 "
+        className="bg-yellow-200 px-4 py-2 rounded-sm text-gray-800 disabled:cursor-not-allowed ml-2 disabled:bg-gray-300"
         disabled={disabled}
         onClick={() => {
           onConfirm(parseInt(input));

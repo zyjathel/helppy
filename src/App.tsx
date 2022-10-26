@@ -10,7 +10,7 @@ import { AuthenticatedAppState, UnauthenticatedState, useAppStore, useGameStore 
 const Game: FunctionComponent<{}> = () => {
   const username = useAppStore((state) => (state as AuthenticatedAppState).username);
 
-
+  const seed = useGameStore((state) => state.seed);
   const board = useGameStore((state) => state.board);
 
   const isGameOver = useGameStore((state) => state.isGameOver);
@@ -37,11 +37,11 @@ const Game: FunctionComponent<{}> = () => {
         </button>
       </div>
       <div className="p-10">
-        <Board data={board} heading={"BINGO"} marked={new Set(history)} />
+        <Board data={board} heading={seed} marked={new Set(history)} />
       </div>
       <div className="p-10">
         <button
-          className="bg-blue-200 px-4 py-1 rounded-sm text-gray-800 disabled:cursor-not-allowed"
+          className="bg-blue-200 px-4 py-1 rounded-sm text-gray-800 disabled:cursor-not-allowed disabled:bg-gray-300"
           onClick={() => next()}
           disabled={isGameOver}
         >
