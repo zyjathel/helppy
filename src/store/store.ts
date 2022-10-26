@@ -57,7 +57,20 @@ export const useGameStore = create<Game>()(
         return;
       }
 
-      const roll = number ?? randomIntFromInterval(1, get().rangeBasedOnSeed * get().seed.length);
+      let roll: number;
+
+      if (number) {
+        if (get().history.includes(number)) {
+          return;
+        } else {
+          roll = number;
+        }
+      } else {
+        roll = randomIntFromInterval(1, get().rangeBasedOnSeed * get().seed.length);
+        while (get().history.includes(roll)) {
+          roll = randomIntFromInterval(1, get().rangeBasedOnSeed * get().seed.length);
+        }
+      }
 
       set((state) => {
         state.history.push(roll);
